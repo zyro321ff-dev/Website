@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NG Celsius | App & Website Development</title>
+
+<meta name="description"
+content="NG Celsius provides professional Android app, website, AI app, e-commerce and custom software development services.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#070b14;
+    --card:#101827;
+    --card2:#0d1421;
+    --text:#ffffff;
+    --muted:#9ca8bb;
+    --primary:#00d9ff;
+    --secondary:#7c3cff;
+    --green:#25d366;
+    --border:rgba(255,255,255,.09);
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(7,11,20,.88);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.logo span{
+    color:var(--primary);
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#dce3ee;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+.nav-btn{
+    background:var(--primary);
+    color:#001018;
+    padding:10px 17px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:90px;
+    background:
+    radial-gradient(circle at 15% 20%,rgba(0,217,255,.15),transparent 30%),
+    radial-gradient(circle at 85% 70%,rgba(124,60,255,.17),transparent 30%);
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.badge{
+    display:inline-block;
+    border:1px solid rgba(0,217,255,.35);
+    background:rgba(0,217,255,.07);
+    color:var(--primary);
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,76px);
+    line-height:1.05;
+    margin-bottom:22px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#00d9ff,#8b5cf6);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:18px;
+    max-width:650px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 22px;
+    border-radius:9px;
+    font-weight:bold;
+    display:inline-block;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:#001018;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.03);
+}
+
+.btn-outline:hover{
+    border-color:var(--primary);
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:var(--muted);
+}
+
+/* SERVICES */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:linear-gradient(145deg,var(--card),var(--card2));
+    border:1px solid var(--border);
+    padding:28px;
+    border-radius:16px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(0,217,255,.4);
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* PRICING */
+
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.price-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:30px;
+    border-radius:18px;
+    position:relative;
+}
+
+.featured{
+    border:1px solid var(--primary);
+    transform:scale(1.03);
+}
+
+.popular{
+    position:absolute;
+    top:-13px;
+    right:20px;
+    background:var(--primary);
+    color:#001018;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.price{
+    font-size:38px;
+    font-weight:800;
+    margin:15px 0;
+}
+
+.price small{
+    font-size:13px;
+    color:var(--muted);
+    font-weight:normal;
+}
+
+.features{
+    list-style:none;
+    margin:20px 0;
+}
+
+.features li{
+    margin:11px 0;
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.features li::before{
+    content:"✓";
+    color:var(--primary);
+    margin-right:9px;
+    font-weight:bold;
+}
+
+/* TABLE */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+    border-radius:15px;
+    overflow:hidden;
+}
+
+th,td{
+    padding:17px;
+    border-bottom:1px solid var(--border);
+    text-align:left;
+}
+
+th{
+    background:#151f31;
+    color:var(--primary);
+}
+
+td{
+    color:#d4dbea;
+}
+
+/* PROCESS */
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.step{
+    text-align:center;
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:22px 12px;
+    border-radius:14px;
+}
+
+.number{
+    width:42px;
+    height:42px;
+    margin:0 auto 12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(0,217,255,.1);
+    color:var(--primary);
+    font-weight:bold;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.about p{
+    color:var(--muted);
+    margin-bottom:15px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.stat{
+    padding:25px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+}
+
+.stat strong{
+    display:block;
+    font-size:30px;
+    color:var(--primary);
+}
+
+/* FAQ */
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+details{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+summary{
+    cursor:pointer;
+    font-weight:bold;
+}
+
+details p{
+    color:var(--muted);
+    margin-top:12px;
+}
+
+/* CONTACT */
+
+.contact-box{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    background:linear-gradient(145deg,#101a2c,#0c1422);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:50px 25px;
+}
+
+.contact-box p{
+    color:var(--muted);
+    margin:15px auto 25px;
+}
+
+.contact-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.info{
+    background:rgba(255,255,255,.04);
+    padding:12px 17px;
+    border-radius:8px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:var(--green);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    z-index:999;
+    box-shadow:0 8px 25px rgba(37,211,102,.35);
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:30px 0;
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.footer-links{
+    margin-top:10px;
+}
+
+.footer-links a{
+    margin:0 8px;
+    color:#cbd5e1;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    nav{
+        display:none;
+    }
+
+    .grid,
+    .pricing{
+        grid-template-columns:1fr;
+    }
+
+    .featured{
+        transform:none;
+    }
+
+    .process{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+}
+
+@media(max-width:500px){
+
+    section{
+        padding:70px 0;
+    }
+
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-box{
+        padding:35px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<div class="container nav">
+
+<a href="#home" class="logo">
+NG <span>Celsius</span>
+</a>
+
+<nav>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#process">Process</a>
+<a href="#about">About</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<a class="nav-btn"
+href="https://wa.me/919596624767?text=Hello%20NG%20Celsius%2C%20I%20want%20to%20develop%20an%20app."
+target="_blank">
+WhatsApp
+</a>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div class="container">
+
+<div class="hero-content">
+
+<div class="badge">
+🚀 Professional Digital Development
+</div>
+
+<h1>
+We Build <span class="gradient">Apps & Websites</span> That Grow Your Business.
+</h1>
+
+<p>
+NG Celsius creates modern Android apps, websites, AI-powered applications,
+e-commerce solutions and custom digital products for individuals,
+startups and businesses.
+</p>
+
+<div class="buttons">
+
+<a href="#pricing" class="btn btn-primary">
+View Pricing
+</a>
+
+<a href="https://wa.me/919596624767?text=Hello%20NG%20Celsius%2C%20I%20want%20to%20discuss%20a%20project."
+target="_blank"
+class="btn btn-outline">
+Start a Project
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Our Services</h2>
+<p>Complete digital development solutions under one roof.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Android App Development</h3>
+<p>
+Custom Android applications with modern UI, smooth performance,
+database integration and required features.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Website Development</h3>
+<p>
+Professional business websites, landing pages, portfolios,
+download websites and custom web solutions.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🤖</div>
+<h3>AI App Development</h3>
+<p>
+AI-powered applications with intelligent features, automation
+and API integrations.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🛒</div>
+<h3>E-Commerce Apps</h3>
+<p>
+Online shopping applications with products, categories,
+orders and customer management.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>UI/UX Design</h3>
+<p>
+Clean, modern and user-friendly interfaces designed for mobile
+and web applications.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🔧</div>
+<h3>Maintenance & Updates</h3>
+<p>
+Bug fixing, feature updates, redesigns and ongoing application
+maintenance.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PRICING -->
+
+<section id="pricing">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Development Plans</h2>
+<p>Starting prices. Final quotation depends on project requirements.</p>
+</div>
+
+<div class="pricing">
+
+<div class="price-card">
+
+<h3>Starter App</h3>
+
+<div class="price">
+₹4,999 <small>starting</small>
+</div>
+
+<ul class="features">
+<li>Basic Android App</li>
+<li>Modern UI</li>
+<li>Up to 5 Screens</li>
+<li>Basic Navigation</li>
+<li>Basic App Testing</li>
+<li>APK Delivery</li>
+</ul>
+
+<a class="btn btn-outline"
+href="https://wa.me/919596624767?text=Hello%20NG%20Celsius%2C%20I%20am%20interested%20in%20the%20Starter%20App%20plan."
+target="_blank">
+Get Started
+</a>
+
+</div>
+
+
+<div class="price-card featured">
+
+<div class="popular">POPULAR</div>
+
+<h3>Professional App</h3>
+
+<div class="price">
+₹9,999 <small>starting</small>
+</div>
+
+<ul class="features">
+<li>Custom Android App</li>
+<li>Professional UI/UX</li>
+<li>Up to 10 Screens</li>
+<li>Database Integration</li>
+<li>Login / Signup</li>
+<li>API Integration</li>
+<li>Testing & Bug Fixing</li>
+<li>APK Delivery</li>
+</ul>
+
+<a class="btn btn-primary"
+href="https://wa.me/919596624767?text=Hello%20NG%20Celsius%2C%20I%20am%20interested%20in%20the%20Professional%20App%20plan."
+target="_blank">
+Choose Plan
+</a>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Business App</h3>
+
+<div class="price">
+₹19,999+ <small>starting</small>
+</div>
+
+<ul class="features">
+<li>Advanced Android App</li>
+<li>Premium UI/UX</li>
+<li>Multiple User Roles</li>
+<li>Admin Panel</li>
+<li>Database</li>
+<li>API Integration</li>
+<li>Payment Integration</li>
+<li>Advanced Features</li>
+<li>Testing & Deployment Support</li>
+</ul>
+
+<a class="btn btn-outline"
+href="https://wa.me/919596624767?text=Hello%20NG%20Celsius%2C%20I%20need%20a%20Business%20App."
+target="_blank">
+Discuss Project
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- OTHER PRICES -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>Other Development Pricing</h2>
+<p>Typical starting prices for individual services.</p>
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Service</th>
+<th>Starting Price</th>
+<th>Details</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Business Website</td>
+<td>₹2,999+</td>
+<td>Responsive professional website</td>
+</tr>
+
+<tr>
+<td>Landing Page</td>
+<td>₹1,999+</td>
+<td>Single-page promotional website</td>
+</tr>
+
+<tr>
+<td>E-Commerce Website</td>
+<td>₹7,999+</td>
+<td>Products, categories and orders</td>
+</tr>
+
+<tr>
+<td>AI Application</td>
+<td>₹14,999+</td>
+<td>AI/API based application</td>
+</tr>
+
+<tr>
+<td>UI/UX Design</td>
+<td>₹1,999+</td>
+<td>Custom app interface design</td>
+</tr>
+
+<tr>
+<td>App Maintenance</td>
+<td>₹999+</td>
+<td>Bug fixes and feature updates</td>
+</tr>
+
+<tr>
+<td>Admin Panel</td>
+<td>₹4,999+</td>
+<td>Dashboard and management system</td>
+</tr>
+
+<tr>
+<td>Payment Integration</td>
+<td>₹1,999+</td>
+<td>Payment gateway integration</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- PROCESS -->
+
+<section id="process">
+
+<div class="container">
+
+<div class="section-title">
+<h2>How We Work</h2>
+<p>From idea to final product.</p>
+</div>
+
+<div class="process">
+
+<div class="step">
+<div class="number">01</div>
+<h3>Idea</h3>
+<p>Understand your requirements.</p>
+</div>
+
+<div class="step">
+<div class="number">02</div>
+<h3>Design</h3>
+<p>Create the UI and user experience.</p>
+</div>
+
+<div class="step">
+<div class="number">03</div>
+<h3>Development</h3>
+<p>Build your application or website.</p>
+</div>
+
+<div class="step">
+<div class="number">04</div>
+<h3>Testing</h3>
+<p>Test features and fix bugs.</p>
+</div>
+
+<div class="step">
+<div class="number">05</div>
+<h3>Delivery</h3>
+<p>Deliver the completed project.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container about">
+
+<div>
+
+<h2>Why Choose <span class="gradient">NG Celsius?</span></h2>
+
+<p>
+We focus on creating practical digital products with clean design,
+useful features and a smooth user experience.
+</p>
+
+<p>
+Whether you need a simple business website or a complete custom
+application, we can discuss your requirements and create a solution
+according to your project.
+</p>
+
+<a href="https://wa.me/919596624767?text=Hello%20NG%20Celsius%2C%20I%20want%20to%20start%20a%20project."
+target="_blank"
+class="btn btn-primary">
+Talk to Us
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<strong>📱</strong>
+Apps
+</div>
+
+<div class="stat">
+<strong>🌐</strong>
+Websites
+</div>
+
+<div class="stat">
+<strong>🤖</strong>
+AI Solutions
+</div>
+
+<div class="stat">
+<strong>⚡</strong>
+Custom Projects
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Frequently Asked Questions</h2>
+<p>Common questions from clients.</p>
+</div>
+
+<div class="faq">
+
+<details>
+<summary>How much does an app cost?</summary>
+<p>
+Our app development starts from ₹4,999. The final price depends
+on the number of screens, features, backend, APIs and other requirements.
+</p>
+</details>
+
+<details>
+<summary>Can you build a custom app?</summary>
+<p>
+Yes. We can discuss your idea and develop a custom application
+according to your requirements.
+</p>
+</details>
+
+<details>
+<summary>Do you create websites too?</summary>
+<p>
+Yes. We develop business websites, landing pages, portfolios,
+e-commerce websites and other custom websites.
+</p>
+</details>
+
+<details>
+<summary>Can you add AI features?</summary>
+<p>
+Yes. AI/API based features can be integrated depending on your
+project requirements and the available technology.
+</p>
+</details>
+
+<details>
+<summary>How can I contact NG Celsius?</summary>
+<p>
+You can contact us directly through WhatsApp using the green
+WhatsApp button on this website.
+</p>
+</details>
+
+</div>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>Have an App Idea?</h2>
+
+<p>
+Tell us about your idea and let's discuss your project,
+features and development requirements.
+</p>
+
+<div class="contact-info">
+
+<div class="info">
+📱 +91 95966 24767
+</div>
+
+<div class="info">
+💬 WhatsApp Available
+</div>
+
+<div class="info">
+⚡ NG Celsius
+</div>
+
+</div>
+
+<br>
+
+<a class="btn btn-primary"
+href="https://wa.me/919596624767?text=Hello%20NG%20Celsius%2C%20I%20have%20an%20app%20idea%20and%20want%20to%20discuss%20it."
+target="_blank">
+💬 Contact on WhatsApp
+</a>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- WHATSAPP FLOATING BUTTON -->
+
+<a class="whatsapp"
+   href="https://wa.me/919596624767?text=Hello%20NG%20Celsius%2C%20I%20want%20to%20develop%20an%20app."
+   target="_blank"
+   rel="noopener">
+   💬
+</a>
+💬
+</a>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<strong>NG Celsius</strong>
+
+<p>
+Professional App & Website Development
+</p>
+
+<div class="footer-links">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</div>
+
+<br>
+
+© 2026 NG Celsius. All Rights Reserved.
+
+</div>
+
+</footer>
+
+</body>
+</html>
